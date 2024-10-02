@@ -5,7 +5,8 @@
     "description": "Will display this weeks menu from either Halden or Fredrikstad ", 
     "permissions": [
         "activeTab",
-        "scripting"
+        "scripting",
+        "storage"
       ],
       "action": {
         "default_popup": "menu.html"

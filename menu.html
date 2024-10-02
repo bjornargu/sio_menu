@@ -1,13 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Info Retriever</title>
-</head>
-<body>
-  <div id="content">Loading data...</div>
-  <button id="refreshData">Refresh</button>
+  <head>
+    <title>Info Retriever</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <script src="popup.js"></script>
-</body>
+    <style>
+      body {
+        width: 16rem;
+        font-family: "Roboto", sans-serif;
+      }
+      #menuwrapper {
+        max-height: 400px; /* Adjust as needed */
+        overflow-y: auto; /* Enable scrolling if needed */
+      }
+
+      #menu li {
+        margin-bottom: 0.5rem; /* Space between items */
+      }
+
+      /* Responsive design for smaller screens */
+      @media (max-width: 600px) {
+        #menu li {
+          width: 100%; /* Full width on small screens */
+        }
+      }
+
+      .highlight {
+        background-color: rgba(255, 215, 0, 0.5); /* Light yellow background */
+        border-radius: 0.375rem; /* Rounded corners */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HTML -->
+    <!-- Language and Location Selector -->
+    <div class="flex items-center justify-between p-2 bg-gray-500 shadow-md">
+      <select
+        id="locationSelect"
+        class="border border-gray-300 rounded px-2 py-1 mr-4"
+      >
+        <option value="halden">Halden</option>
+        <option value="fredrikstad">Fredrikstad</option>
+      </select>
+
+      <div id="langBtn" class="cursor-pointer">
+        <img src="images/gb.svg" alt="Language Icon" class="w-6 h-6" />
+      </div>
+    </div>
+
+    <div id="menuwrapper" class="p-4">
+      <ul id="menu" class="mb-4 list-none">
+        <!-- Meals will be inserted here dynamically -->
+      </ul>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
 </html>
-
